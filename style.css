@@ -20,6 +20,7 @@
 }
 
 :root {
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
     --bg: #060606;
     --bg-soft: #111111;
     --text: #f3f1eb;
@@ -507,8 +508,8 @@ main {
 
 .hero-background {
     position: absolute;
-    inset: -7% 0;
-    transform: translate3d(0, var(--hero-drift, 0px), 0);
+    inset: -110px 0;
+    transform: translate3d(0, var(--hero-drift, 0px), 0) scale(var(--hero-scroll-scale, 1));
     pointer-events: none;
 }
 
@@ -519,7 +520,7 @@ main {
 }
 
 .motion-enabled .hero-background img {
-    animation: hero-settle 1.5s var(--ease) both;
+    animation: hero-settle 2s var(--motion-ease) both;
 }
 
 .motion-enabled .project-work-1 .project-hero-copy {
@@ -528,20 +529,22 @@ main {
 }
 
 .motion-enabled .project-work-1 .project-hero-title {
-    animation: hero-enter 1.1s var(--ease) both;
+    --hero-enter-y: 70px;
+    animation: hero-enter 1s var(--motion-ease) both;
 }
 
 .motion-enabled .project-work-1 .project-hero-text {
-    animation: hero-enter 1.1s var(--ease) 180ms both;
+    --hero-enter-y: 45px;
+    animation: hero-enter 1s var(--motion-ease) 250ms both;
 }
 
 @keyframes hero-settle {
-    from { transform: scale(1.055); }
+    from { transform: scale(1.12); }
     to { transform: scale(1); }
 }
 
 @keyframes hero-enter {
-    from { opacity: 0; transform: translate3d(0, 32px, 0); }
+    from { opacity: 0; transform: translate3d(0, var(--hero-enter-y, 70px), 0); }
     to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
@@ -688,7 +691,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.85s var(--ease);
+    transition: transform 0.6s var(--motion-ease);
 }
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
@@ -699,15 +702,20 @@ main {
 .project-media-card:hover video,
 .project-media-card:hover .project-tour-preview iframe,
 .about-image-wrap:hover .about-image {
-    transform: scale(1.02);
+    transform: scale(1.04);
+    transition-duration: 0.6s;
 }
 
 .demo-pill:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.04);
 }
 
 .demo-pill:hover .demo-pill__arrow {
-    transform: translateX(3px);
+    transform: translateX(6px);
+}
+
+.project-feature-video:hover {
+    --feature-hover: 1.04;
 }
 }
 
@@ -981,7 +989,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.85s var(--ease);
+    transition: transform 0.6s var(--motion-ease);
 }
 
 .project-work-1 .project-gallery--features {
@@ -1112,14 +1120,30 @@ main {
     content: '';
     position: absolute;
     inset: -1px 0 auto;
-    height: 1px;
+    height: 2px;
     background: var(--sand);
     transform: scaleX(var(--step-progress, 0));
     transform-origin: left;
 }
 
 .project-workflow-grid article > span {
-    transition: color 0.35s var(--ease);
+    transition: color 0.45s var(--motion-ease), transform 1s var(--motion-ease), opacity 1s var(--motion-ease);
+}
+
+.motion-enabled .project-workflow-grid article.reveal.is-visible {
+    opacity: 0.55;
+}
+
+.motion-enabled .project-workflow-grid article.reveal.is-visible.is-current {
+    opacity: 1;
+}
+
+.motion-enabled .project-workflow-grid article > span.motion-part {
+    transform-origin: left bottom;
+}
+
+.motion-enabled .project-workflow-grid article.is-visible > span.motion-part {
+    transform: translateY(0) scale(1.45);
 }
 
 .motion-enabled .project-workflow-grid article.is-current > span {
@@ -1323,14 +1347,55 @@ main {
 
 .reveal-enabled .reveal {
     opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    transform: translateY(70px);
+    transition: opacity 1s var(--motion-ease), transform 1s var(--motion-ease);
     transition-delay: var(--reveal-delay, 0ms);
 }
 
 .reveal-enabled .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.reveal-enabled .reveal-sequence {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-enabled .reveal-sequence > .motion-part {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 1s var(--motion-ease), transform 1s var(--motion-ease);
+    transition-delay: var(--part-delay, 0ms);
+}
+
+.reveal-enabled .reveal-sequence.is-visible > .motion-part {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-enabled .reveal-media {
+    transform: translateY(80px) scale(0.96);
+    transition-duration: 1.15s;
+}
+
+.reveal-enabled .project-gallery-feature > .project-gallery-card.reveal-media {
+    clip-path: inset(15% 0 15% 0);
+    transition-property: opacity, transform, clip-path;
+}
+
+.reveal-enabled .project-gallery-feature > .project-gallery-card.reveal-media.is-visible {
+    clip-path: inset(0 0 0 0);
+}
+
+@media (min-width: 1181px) and (prefers-reduced-motion: no-preference) {
+    .motion-enabled .project-work-1 .project-feature-video {
+        border-radius: var(--feature-radius, 28px);
+    }
+
+    .motion-enabled .project-work-1 .project-feature-video video {
+        transform: scale(calc(var(--feature-scale, 0.9) * var(--feature-hover, 1)));
+    }
 }
 
 .lightbox {
@@ -1467,10 +1532,14 @@ main {
         scroll-behavior: auto !important;
     }
 
-    .reveal-enabled .reveal {
-        opacity: 1;
-        transform: none;
-        transition-delay: 0s;
+    .reveal-enabled .reveal,
+    .reveal-enabled .reveal-sequence > .motion-part,
+    .motion-enabled .project-workflow-grid article.reveal.is-visible,
+    .motion-enabled .project-workflow-grid article.is-visible > span.motion-part {
+        opacity: 1 !important;
+        transform: none !important;
+        clip-path: none !important;
+        transition-delay: 0s !important;
     }
 
     .hero-background,

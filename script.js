@@ -89,7 +89,10 @@
             (entries, currentObserver) => {
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
-                    entry.target.classList.add('is-visible');
+                    const targets = entry.target.classList.contains('motion-reveal-group')
+                        ? entry.target.querySelectorAll('.reveal')
+                        : [entry.target];
+                    targets.forEach((target) => target.classList.add('is-visible'));
                     currentObserver.unobserve(entry.target);
                 });
             },
@@ -100,7 +103,8 @@
             }
         );
 
-        ui.revealItems.forEach((item) => observer.observe(item));
+        const targets = new Set(ui.revealItems.map((item) => item.closest('.motion-reveal-group') || item));
+        targets.forEach((item) => observer.observe(item));
     }
 
     function setProjectIndexPreview(type, src) {
