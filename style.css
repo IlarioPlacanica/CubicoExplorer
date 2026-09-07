@@ -100,6 +100,34 @@ button {
     mix-blend-mode: soft-light;
 }
 
+.demo-pill {
+    position: fixed;
+    right: max(1.25rem, env(safe-area-inset-right));
+    bottom: max(1.25rem, env(safe-area-inset-bottom));
+    z-index: 35;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--black);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.demo-pill:hover {
+    background: var(--sand);
+}
+
+.demo-pill:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+}
+
 .site-header {
     position: fixed;
     inset: 0 0 auto;
