@@ -1,0 +1,40 @@
+MOLASSI - VERSIONE FOTOGRAFICA
+
+Aprire Molassi_Fotografico.blend. Per aggiungerlo al contesto usare la collezione
+MOLASSI_FOTOGRAFICO. Oggetto padre: MOLASSI_FOTO_ROOT.
+Sono inclusi anche FBX e GLB con texture incorporate e la cartella textures.
+Il modello precedente e il progetto originale non vengono sovrascritti.
+
+GEOMETRIA
+Fronte 46m, profondita massima 15m, gronda 30m, rientranza 12x5m.
+Tre gruppi celesti aggettanti sul fronte (2,2,3 colonne di finestre).
+Un gruppo celeste sul fianco destro (3 colonne). Tutti sporgono di 1 metro.
+Otto piani residenziali da 6m a 30m. Basamento uniforme di 6m.
+Modello leggero: i dettagli minuti delle facciate sono nelle fotografie.
+
+UV E FOTO
+UV_Proiezione_Facciata: proiezione ortografica frontale/destra/posteriore,
+equivalente a Project from View, con registrazione per fasce e colonne.
+Le UV fotografiche restano nell'intervallo 0..1, senza isole collassate.
+Fianchi degli aggetti e rientranza hanno proiezioni dedicate.
+Copertura e maschere delle ringhiere mantengono ripetizione alla loro scala.
+
+Le foto del fronte e del fianco sono state editate con image_gen integrato,
+senza fallback CLI/API. L'immagine che aveva introdotto un quarto gruppo e
+stata scartata. La conversione da 6/7 a 8 piani si esegue deterministicamente
+nelle UV, ripetendo soltanto alcune fasce centrali. Le immagini non sono
+state falsamente descritte come contenenti otto piani.
+Il retro residenziale conserva la foto originale con otto piani; il basamento
+usa l'edit fotografico. Le tonalita di mattone e pietra sono raccordate mediante
+fattori colore derivati da campioni delle immagini, mantenuti nei materiali.
+
+LIMITI
+Le fotografie mantengono parte delle ombre e dei riflessi originali: questo
+asset e adatto al contesto e non rappresenta un rilievo PBR completo.
+Le giunzioni sono raccordate; le facciate complete non sono texture ripetibili
+seamless come un campione di solo mattone.
+Copertura, sinistra e dettagli non documentati rimangono approssimati.
+Il GLB conserva la maschera alpha delle ringhiere. Nel FBX potrebbe essere
+necessario assegnare manualmente l'alpha alla maschera nel materiale Unreal.
+Nessuna lightmap UV dedicata o collisione personalizzata inclusa.
+Verifiche eseguite senza render di anteprima; apertura diretta affidata all'utente.

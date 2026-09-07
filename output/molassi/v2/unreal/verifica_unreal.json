@@ -1,0 +1,70 @@
+{
+  "triangoli": 24092,
+  "mesh_materiali": 14,
+  "piani_residenziali": 8,
+  "aggetto_m": 1,
+  "pietra_fino_a_m": 3.2,
+  "basamento_fino_a_m": 6,
+  "blend_MB": 15.92,
+  "fbx_MB": 16.01,
+  "glb_MB": 17.13,
+  "ringhiere_alpha_mode": "MASK",
+  "texture_materiali": [
+    {
+      "name": "Alluminio",
+      "normal_map": false
+    },
+    {
+      "name": "Ferro verniciato",
+      "normal_map": false
+    },
+    {
+      "name": "Insegna rossa",
+      "normal_map": false
+    },
+    {
+      "name": "Intonaco",
+      "normal_map": false
+    },
+    {
+      "name": "Laterizio.001",
+      "normal_map": true
+    },
+    {
+      "name": "Pannelli azzurri",
+      "normal_map": false
+    },
+    {
+      "name": "Pietra grigia continua.001",
+      "normal_map": true
+    },
+    {
+      "name": "Ringhiera mascherata",
+      "normal_map": false
+    },
+    {
+      "name": "Tapparella avorio",
+      "normal_map": false
+    },
+    {
+      "name": "Tapparella cotto",
+      "normal_map": false
+    },
+    {
+      "name": "Tegole 2.001",
+      "normal_map": true
+    },
+    {
+      "name": "Tenda avorio",
+      "normal_map": false
+    },
+    {
+      "name": "Tenda verde",
+      "normal_map": false
+    },
+    {
+      "name": "Vetro 0",
+      "normal_map": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mesh": 79,
+  "poligoni": 131255,
+  "tegole_geometriche": 6165,
+  "texture_incorporate": [
+    "laterizio.png",
+    "pietra_grigia.png"
+  ],
+  "quota_pietra_tutti_lati": 3.2,
+  "quota_residenziale_tutti_lati": 6,
+  "piani": 8
+}

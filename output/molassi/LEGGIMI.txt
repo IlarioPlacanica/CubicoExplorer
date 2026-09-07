@@ -1,0 +1,28 @@
+MOLASSI - ASSET DI CONTESTO
+
+Molassi_Edificio_Asset.blend: asset in metri, con immagini incorporate.
+Molassi_Edificio_Asset.glb: esportazione portabile con texture fotografiche.
+anteprima_fronte.png / anteprima_retro.png: viste di controllo.
+
+Per inserire nel progetto aperto:
+File > Append > Molassi_Edificio_Asset.blend > Collection > Molassi_Edificio_46x15m.
+Spostare e ruotare l'oggetto padre MOLASSI_ASSET per posizionare l'intero edificio.
+La collezione Anteprima - non esportare contiene soltanto camera e luci.
+
+Misure: fronte 46m, profondita massima 15m, altezza gronda 30m.
+Testata destra larga 12m; retro arretrato di 5m, corpo principale profondo 10m.
+Otto livelli residenziali. Origine nell'angolo anteriore sinistro a terra.
+Fronte verso -Y, retro verso +Y, lato destro a X=46.
+
+Approssimazioni: colmo a 33m, basamento anteriore 6m, piani anteriori da 3m.
+La texture frontale originale ha sei livelli e quella destra sette: le fasce
+sono ripetute tramite UV per ottenere otto livelli senza stirare le aperture.
+Il retro mantiene gli otto livelli della fotografia originale.
+Il lato sinistro, la parete di ritorno della rientranza e le quote minute
+di balconi, vani scala e comignoli sono ricostruiti per approssimazione.
+Le fotografie includono riflessi e ombre; l'asset e pensato per viste di contesto.
+Il materiale procedurale del tetto e completo nel BLEND; nel GLB usa il colore base.
+
+MolassiContesto.blend originale non e stato modificato. Asset non ancora
+posizionato nel terreno: le superfici presenti nel progetto hanno quote diverse.
+build_asset.py consente di rigenerare il modello con Blender 5.1.

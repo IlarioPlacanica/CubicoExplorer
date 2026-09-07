@@ -1,0 +1,19 @@
+{
+  "mesh": 14,
+  "poligoni": 11811,
+  "triangoli": 24092,
+  "tegole_geometriche": 0,
+  "texture_incorporate": [
+    "laterizio.png",
+    "laterizio_Normal.png",
+    "pietra_grigia.png",
+    "pietra_grigia_Normal.png",
+    "ringhiera_RGBA.png",
+    "tegole.png",
+    "tegole_Normal.png"
+  ],
+  "quota_pietra_tutti_lati": 3.2,
+  "quota_residenziale_tutti_lati": 6,
+  "piani": 8,
+  "sporgenza_m": 1.0
+}

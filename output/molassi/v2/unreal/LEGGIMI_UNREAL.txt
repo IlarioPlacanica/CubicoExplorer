@@ -1,0 +1,47 @@
+MOLASSI - VERSIONE LEGGERA PER UNREAL
+
+FILE PRINCIPALI
+Molassi_Unreal.blend: aprire per controllare e modificare l'asset.
+Molassi_Unreal.fbx: geometria e materiali esportati, texture incorporate.
+Molassi_Unreal.glb: esportazione con materiali PBR, normal map e alpha MASK.
+textures/: texture esterne incluse per assegnazioni manuali.
+
+24.092 triangoli, 14 mesh divise per materiale.
+Non sono presenti tegole individuali o stecche individuali delle tapparelle.
+Le ringhiere usano superfici con texture ritagliata tramite alpha.
+Sono mantenuti rientranza, aggetti, balconi, vani scala, tetto e profili principali.
+
+QUOTE
+Fronte 46m; fianco 15m; gronda 30m; otto livelli residenziali.
+Rientranza 12m x 5m. Sporgenza gruppi azzurri: 1 METRO su fronte e destra.
+I gruppi estrusi includono finestre, pannelli, fianchi, intradosso e scossaline.
+Le quote principali si riferiscono alle murature: aggetti, cornicioni e balconi
+si estendono oltre il perimetro 46 x 15m.
+Basamento uniforme: pietra 0..3.2m, fascia superiore 3.2..6m su tutti i lati.
+Gli otto piani iniziano tutti a 6m; altezza interpiano 3m.
+
+BLENDER
+Collezione da aggiungere: MOLASSI_UNREAL. Oggetto padre: MOLASSI_UNREAL_ROOT.
+STUDIO_ANTEPRIME contiene soltanto camera e terreno di visualizzazione e non
+viene incluso nelle esportazioni FBX/GLB. Il progetto originale e invariato.
+
+MATERIALI
+Il GLB include il materiale Ringhiera mascherata come alphaMode MASK.
+Nel trasferimento tramite FBX verificare l'assegnazione dell'alpha della texture
+ringhiera_RGBA.png alla maschera di opacita, con materiale visibile su due lati.
+Le normal map sono tangenti con convenzione OpenGL (+Y); nel materiale di una
+pipeline DirectX occorre invertire il canale verde. Il GLB ne dichiara l'uso.
+I vetri sono opachi riflettenti per limitare il costo della trasparenza.
+Non sono inclusi interni, collisioni personalizzate o UV lightmap dedicate.
+
+VERIFICA
+File BLEND riaperto; controllate texture incorporate, quote e conteggio triangoli.
+FBX reimportato in Blender per controllare la scala. GLB controllato per normal
+map e trasparenza mascherata. Non e stato eseguito un test dentro Unreal Engine.
+Nessun ulteriore render di anteprima dopo la richiesta di interromperli.
+
+TEXTURE
+Laterizio, pietra e tegole: generate con image_gen integrato dai riferimenti
+forniti. Normal map e maschera ringhiere preparate con Blender.
+I prompt sono in PROMPT_TEXTURE.txt. Nessun fallback CLI/API per imagegen.
+I microdettagli e le parti prive di riferimento restano interpretati.

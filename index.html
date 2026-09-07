@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Ilario Placanica — visualizzazione 3D per il web, strumenti immersivi per il real estate, landing page ed esperienze interattive per la presentazione di immobili."
+    />
+    <title>Prodotti</title>
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header" id="top">
+        <nav class="site-nav" aria-label="Navigazione principale">
+            <a href="#selected-work">Servizi</a>
+            <a href="#contact">Contatti</a>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Apri o chiudi il menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero" aria-label="Introduzione">
+            <div class="hero-media-grid" aria-hidden="true">
+                <img src="assets/img/work-1.JPG" alt="Esperienza immobiliare" class="hero-media-full" />
+            </div>
+
+            <div class="hero-copy">
+                <h1>Mostra il progetto, non aspettare il cantiere.</h1>
+                <p class="hero-text">Il tuo strumento per vendere, mesi prima della fine dei lavori.</p>
+            </div>
+
+            <div class="hero-footer">Disponibile per progetti di archviz premium, sistemi di presentazione immobiliare, landing page ed esperienze web immersive per l’architettura e il marketing immobiliare.</div>
+        </section>
+
+        <section class="selected-work" id="selected-work">
+            <div class="section-head reveal">
+                <p class="eyebrow">I nostri prodotti</p>
+                <h2>Pochi prodotti. Molti punti di vista</h2>
+            </div>
+
+            <div class="project-index reveal">
+                <a
+                    class="project-index-item is-active"
+                    href="#work-1"
+                    data-preview-type="video"
+                    data-preview-src="assets/video/work-1-final.mp4"
+                >
+                    <span class="project-index-num">01</span>
+                    <span class="project-index-main">
+                        <strong>Vendere prima ancora di costruire</strong>
+                        <small>Esterno e contesto urbano / Appartamenti su misura / Masterplan interattivo</small>
+                    </span>
+                </a>
+
+                <a
+                    class="project-index-item"
+                    href="#work-2"
+                    data-preview-type="image"
+                    data-preview-src="assets/img/work-2-gallery-dolomite-1.jpg"
+                >
+                    <span class="project-index-num">02</span>
+                    <span class="project-index-main">
+                        <strong>Ogni appartamento diventa contenuto di vendita</strong>
+                        <small>Render e video fotorealistici / Personalizzazione in tempo reale</small>
+                    </span>
+                </a>
+
+                <a
+                    class="project-index-item"
+                    href="#work-3"
+                    data-preview-type="image"
+                    data-preview-src="assets/img/work-3.webp"
+                >
+                    <span class="project-index-num">03</span>
+                    <span class="project-index-main">
+                        <strong>Finiture</strong>
+                        <small>Materiali e colori / Personalizzazione degli ambienti / Scelte a confronto</small>
+                    </span>
+                </a>
+
+                <div class="project-index-preview" aria-hidden="true">
+                    <img id="index-preview-image" src="assets/img/work-1.JPG" alt="Anteprima del progetto selezionato" />
+                    <video id="index-preview-video" muted loop playsinline preload="auto">
+                        <source src="assets/video/work-1-final.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--dark project-work-1" id="work-1">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-1.JPG');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <h2 class="project-hero-title">Un visualizzatore 3D interattivo per vendere prima ancora di costruire.</h2>
+                    <p class="project-hero-text">Un'unica piattaforma che porta il cliente dentro l'edificio, dentro ogni appartamento e dentro il quartiere — con vista dalla finestra, esposizione al sole, masterplan dei servizi e stato vendite in tempo reale. Pensata per imprese di costruzione e studi di architettura che vogliono avviare le vendite fin dalla fase di cantiere.</p>
+                </div>
+            </div>
+
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow"><strong>Cosa comprende</strong></p>
+                    <p>Esplorazione esterna e di contesto, visualizzazione di ogni appartamento con filtro personalizzato, masterplan interattivo con stato vendite, render e video fotorealistici, configuratore di personalizzazione.</p>
+                </div>
+            </div>
+
+            <div class="project-split reveal">
+                <div class="project-copy-sticky">
+                    <p class="eyebrow">Perché è importante</p>
+                    <h3 class="project-body-title">Uno strumento di vendita, non solo un render.</h3>
+                    <p>L’esperienza è stata progettata per rendere il progetto leggibile e desiderabile in tempo reale. Invece di affidarsi soltanto a immagini statiche, l’interfaccia favorisce una navigazione attiva, la variazione della luce naturale e una migliore comprensione dello spazio durante le presentazioni ai clienti.</p>
+                    <div class="project-bullet-list">
+                        <p>Visualizzazione real-time</p>
+                        <p>Sistema dinamico della luce diurna</p>
+                        <p>UX pensata per il touchscreen</p>
+                        <p>Presentazione attenta al contesto</p>
+                    </div>
+                </div>
+
+                <div
+                    class="project-feature-video js-open-lightbox"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Apri il video finale del progetto 1"
+                    data-type="video"
+                    data-src="assets/video/work-1-final.mp4"
+                    data-caption="Video finale della presentazione real-time."
+                >
+                    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/work-1.JPG">
+                        <source src="assets/video/work-1-final.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="project-gallery project-gallery--three reveal">
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-1-gallery-1.mp4"
+                    data-caption="Video 01 della gallery di Work 1."
+                >
+                    <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                        <source src="assets/video/work-1-gallery-1.mp4" type="video/mp4" />
+                    </video>
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-1-gallery-2.mp4"
+                    data-caption="Video 02 della gallery di Work 1."
+                >
+                    <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                        <source src="assets/video/work-1-gallery-2.mp4" type="video/mp4" />
+                    </video>
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-1-gallery-3.mp4"
+                    data-caption="Video 03 della gallery di Work 1."
+                >
+                    <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                        <source src="assets/video/work-1-gallery-3.mp4" type="video/mp4" />
+                    </video>
+                </button>
+            </div>
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">Dal contesto modellato all’eseguibile finale.</h3>
+                </div>
+
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Modellazione dell’edificio e del contesto</h4>
+                        <p>Ricostruiamo l’edificio e il quartiere circostante per mostrare il progetto nel suo contesto e rendere esplorabili gli spazi prima della costruzione.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Materiali, arredi e contesto urbano</h4>
+                        <p>Arricchiamo gli ambienti con materiali, illuminazione e arredi e integriamo il contesto urbano per aiutare il cliente a comprendere gli spazi e immaginare come viverli.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Interazione e consegna</h4>
+                        <p>Prepariamo un’interfaccia intuitiva, utilizzabile anche su touchscreen, e consegniamo un’applicazione pronta per esplorare il progetto e accompagnare le presentazioni ai clienti.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--dark project-work-2" id="work-2">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-2.jpg');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <h2 class="project-hero-title">Dallo stesso file possiamo creare tutti i contenuti per il tuo marketing.</h2>
+                    <p class="project-hero-text">Dallo stesso modello nascono i contenuti pronti per il tuo marketing: render e video fotorealistici, senza costi di produzione separati. Su richiesta, possiamo spingerci oltre con un configuratore che lascia al cliente personalizzare l'appartamento in tempo reale.</p>
+                </div>
+            </div>
+
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow">Ruolo</p>
+                    <p>Produzione 3D, direzione dei render, layout visivo, integrazione del virtual tour e presentazione web.</p>
+                </div>
+            </div>
+
+            <div class="project-split reveal">
+                <div class="project-copy-sticky">
+                    <p class="eyebrow">Premessa</p>
+                    <h3 class="project-body-title">Storytelling immobiliare centrato sugli interni.</h3>
+                    <p>Immagini e video fotorealistici pronti per sito, social e materiali commerciali — generati dallo stesso modello, senza costi e tempi di produzione separati. Il nostro studio supporta anche la scelta degli arredi.</p>
+                </div>
+
+                    <div
+                        class="project-media-card js-open-lightbox"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Apri l’immagine del progetto 2"
+                        data-type="image"
+                        data-src="assets/img/work-2.jpg"
+                        data-caption="Render degli interni dell’appartamento."
+                    >
+                        <img src="assets/img/work-2.jpg" alt="Render degli interni dell’appartamento" />
+                    </div>
+
+            </div>
+
+            <div class="project-gallery project-gallery--four reveal">
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-dolomite-1.jpg"
+                    data-caption="Dolomite, vista 1."
+                >
+                    <img src="assets/img/work-2-gallery-dolomite-1.jpg" alt="Dolomite, vista 1." />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-1.png"
+                    data-caption="Camera da letto."
+                >
+                    <img src="assets/img/work-2-gallery-1.png" alt="Camera da letto." />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-2.png"
+                    data-caption="Salotto, vista 1."
+                >
+                    <img src="assets/img/work-2-gallery-2.png" alt="Salotto, vista 1." />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-dolomite-2.jpg"
+                    data-caption="Dolomite, vista 2."
+                >
+                    <img src="assets/img/work-2-gallery-dolomite-2.jpg" alt="Dolomite, vista 2." />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-3.png"
+                    data-caption="Salotto, vista 2."
+                >
+                    <img src="assets/img/work-2-gallery-3.png" alt="Salotto, vista 2." />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-2-gallery-4.png"
+                    data-caption="Salotto, vista 3."
+                >
+                    <img src="assets/img/work-2-gallery-4.png" alt="Salotto, vista 3." />
+                </button>
+            </div>
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">Dalle scene d’interni alla pubblicazione sul web.</h3>
+                </div>
+
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Preparazione degli ambienti</h4>
+                        <p>Ricostruiamo gli spazi del progetto e li completiamo con materiali, illuminazione, arredi e contesto urbano per valorizzare ogni appartamento.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Produzione delle immagini e cura della presentazione</h4>
+                        <p>Realizziamo immagini fotorealistiche e panoramiche, curando inquadrature, colori e composizione per presentare gli interni con chiarezza e coerenza visiva.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Creazione di contenuti video</h4>
+                        <p>Realizziamo video fotorealistici degli ambienti, pensati per mostrare gli spazi in modo coinvolgente e valorizzare architettura, arredi e dettagli. I contenuti sono ottimizzati per siti web, social media e presentazioni commerciali.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--dark project-work-3" id="work-3">
+            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-3.webp');">
+                <div class="project-hero-overlay project-hero-overlay--dark"></div>
+                <div class="project-hero-copy reveal">
+                    <h2 class="project-hero-title">Finiture</h2>
+                    <p class="project-hero-text">Aiuta il cliente a immaginare la propria casa attraverso materiali, colori e finiture. Visualizza le alternative negli ambienti del progetto e accompagna ogni scelta con una rappresentazione chiara del risultato.</p>
+                </div>
+            </div>
+
+            <div class="project-meta reveal">
+                <div>
+                    <p class="eyebrow"><strong>Cosa comprende</strong></p>
+                    <p>Presentazione di pavimenti, rivestimenti e colori, confronto tra le finiture disponibili e visualizzazione delle combinazioni negli ambienti del progetto.</p>
+                </div>
+            </div>
+
+            <div class="project-split reveal">
+                <div class="project-copy-sticky">
+                    <p class="eyebrow">Perché è importante</p>
+                    <h3 class="project-body-title">Dai campioni alla casa che il cliente immagina.</h3>
+                    <p>Mostrare le finiture nel loro contesto aiuta a comprendere come materiali e colori cambiano la percezione dello spazio. Il cliente può confrontare le proposte e scegliere con maggiore consapevolezza.</p>
+                    <div class="project-bullet-list">
+                        <p>Materiali a confronto</p>
+                        <p>Combinazioni di colori</p>
+                        <p>Ambienti personalizzati</p>
+                        <p>Supporto alla scelta</p>
+                    </div>
+                </div>
+
+                <div
+                    class="project-media-card js-open-lightbox"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Apri l’immagine delle finiture"
+                    data-type="image"
+                    data-src="assets/img/work-3.webp"
+                    data-caption="Materiali e finiture negli ambienti del progetto."
+                >
+                    <img src="assets/img/work-3.webp" alt="Materiali e finiture negli ambienti del progetto" />
+                </div>
+            </div>
+
+            <div class="project-gallery project-gallery--three reveal">
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-3-gallery-1.mp4"
+                    data-caption="Finiture, video 1."
+                >
+                    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <source src="assets/video/work-3-gallery-1.mp4" type="video/mp4" />
+                    </video>
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-3-gallery-2.mp4"
+                    data-caption="Finiture, video 2."
+                >
+                    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <source src="assets/video/work-3-gallery-2.mp4" type="video/mp4" />
+                    </video>
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="video"
+                    data-src="assets/video/work-3-gallery-3.mp4"
+                    data-caption="Finiture, video 3."
+                >
+                    <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <source src="assets/video/work-3-gallery-3.mp4" type="video/mp4" />
+                    </video>
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-3-gallery-4.webp"
+                    data-caption="Finiture, vista 1."
+                >
+                    <img src="assets/img/work-3-gallery-4.webp" alt="Finiture, vista 1" />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-3-gallery-5.webp"
+                    data-caption="Finiture, vista 2."
+                >
+                    <img src="assets/img/work-3-gallery-5.webp" alt="Finiture, vista 2" />
+                </button>
+
+                <button
+                    class="project-gallery-card js-open-lightbox"
+                    type="button"
+                    data-type="image"
+                    data-src="assets/img/work-3-gallery-6.webp"
+                    data-caption="Finiture, vista 3."
+                >
+                    <img src="assets/img/work-3-gallery-6.webp" alt="Finiture, vista 3" />
+                </button>
+            </div>
+
+            <div class="project-workflow reveal">
+                <div class="project-workflow-header">
+                    <p class="eyebrow">Workflow</p>
+                    <h3 class="project-body-title">Dalla selezione dei materiali alla scelta delle finiture.</h3>
+                </div>
+
+                <div class="project-workflow-grid">
+                    <article>
+                        <span>01</span>
+                        <h4>Selezione delle finiture</h4>
+                        <p>Raccogliamo materiali, colori e opzioni disponibili per definire le proposte da presentare al cliente.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h4>Visualizzazione negli ambienti</h4>
+                        <p>Applichiamo le finiture agli spazi del progetto per mostrare l’effetto delle diverse combinazioni di pavimenti, rivestimenti e colori.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h4>Confronto e scelta</h4>
+                        <p>Affianchiamo il cliente nel confronto delle alternative per individuare le soluzioni più adatte alla casa che desidera.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-grid reveal">
+                <div>
+                    <p class="eyebrow">Contatti</p>
+                    <h2>Costruiamo insieme progetti che risultino premium, chiari e impossibili da ignorare.</h2>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:info@cubico-work.com">info@cubico-work.com</a>
+                    <a href="tel:+393669011589">+39 3669011589</a>
+                    <a href="https://www.linkedin.com/company/cubico-studio/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" type="button" aria-label="Chiudi il visualizzatore multimediale">Chiudi</button>
+        <div class="lightbox-shell">
+            <button class="lightbox-nav lightbox-nav--prev" type="button" aria-label="Contenuto precedente">&#8249;</button>
+            <div class="lightbox-stage" id="lightbox-stage"></div>
+            <button class="lightbox-nav lightbox-nav--next" type="button" aria-label="Contenuto successivo">&#8250;</button>
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
