@@ -508,6 +508,10 @@ main {
     padding: 0 0 4rem;
 }
 
+.project-work-1 {
+    --project-title-size: clamp(2rem, 4vw, 4rem);
+}
+
 .project-hero-title {
     max-width: 10ch;
     font-size: var(--project-title-size);
@@ -899,6 +903,47 @@ main {
     gap: 0;
 }
 
+.product-intro {
+    width: min(var(--max), calc(100vw - 2.5rem));
+    margin-inline: auto;
+    padding-block: 4.5rem 3.5rem;
+}
+
+.product-intro h2 {
+    max-width: 23ch;
+    margin: 0;
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    line-height: 1.12;
+}
+
+.product-intro__description {
+    max-width: 43rem;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.project-work-2 .project-gallery--marketing {
+    padding-top: 0;
+}
+
+.marketing-carousel {
+    position: relative;
+    min-width: 0;
+}
+
+.marketing-carousel .project-preview-carousel__viewport {
+    position: relative;
+    border: 0;
+    border-radius: 1.25rem;
+}
+
+.marketing-carousel .project-gallery-card {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
 .project-gallery-feature {
     display: grid;
     grid-template-columns: minmax(0, 0.55fr) minmax(0, 1fr);
@@ -937,6 +982,11 @@ main {
 }
 
 @media (max-width: 820px) {
+    .product-intro {
+        width: calc(100vw - 2rem);
+        padding-block: 3rem;
+    }
+
     .project-gallery-feature {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.5rem;
@@ -1213,9 +1263,7 @@ main {
     );
     display: grid;
     grid-template-columns: var(--lightbox-nav-slot) minmax(0, var(--lightbox-media-width)) var(--lightbox-nav-slot);
-    grid-template-areas:
-        'prev stage next'
-        '. caption .';
+    grid-template-areas: 'prev stage next';
     align-items: center;
     column-gap: var(--lightbox-nav-gap);
     row-gap: 1rem;
@@ -1294,15 +1342,6 @@ main {
     height: 100%;
     border: 0;
     background: #050505;
-}
-
-.lightbox-caption {
-    grid-area: caption;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
 }
 
 @media (prefers-reduced-motion: reduce) {

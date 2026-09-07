@@ -18,7 +18,6 @@
 
         lightbox: document.getElementById('lightbox'),
         lightboxStage: document.getElementById('lightbox-stage'),
-        lightboxCaption: document.getElementById('lightbox-caption'),
         lightboxClose: document.querySelector('.lightbox-close'),
         lightboxPrev: document.querySelector('.lightbox-nav--prev'),
         lightboxNext: document.querySelector('.lightbox-nav--next'),
@@ -88,7 +87,8 @@
                 });
             },
             {
-                threshold: 0.16,
+                // Tall galleries may never fit enough of their height in the viewport.
+                threshold: 0,
                 rootMargin: '0px 0px -6% 0px'
             }
         );
@@ -334,7 +334,7 @@
     }
 
     function renderLightboxItem(index) {
-        if (!ui.lightboxStage || !ui.lightboxCaption) return;
+        if (!ui.lightboxStage) return;
         if (!lightboxItems.length) return;
         if (index < 0 || index >= lightboxItems.length) return;
 
@@ -346,7 +346,6 @@
         const mediaNode = createLightboxMedia(item.type, item.src, caption);
 
         ui.lightboxStage.appendChild(mediaNode);
-        ui.lightboxCaption.textContent = caption;
 
         if (mediaNode.tagName === 'VIDEO') {
             safePlay(mediaNode);
