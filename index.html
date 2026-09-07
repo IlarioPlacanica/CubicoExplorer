@@ -24,7 +24,8 @@
 
     <main>
         <section class="project-section project-section--dark project-work-1" id="work-1">
-            <div class="project-hero project-hero--image" style="background-image:url('assets/img/work-1.JPG');">
+            <div class="project-hero project-hero--image">
+                <div class="hero-background" aria-hidden="true"><img src="assets/img/work-1.JPG" alt="" fetchpriority="high" /></div>
                 <div class="project-hero-overlay project-hero-overlay--dark"></div>
                 <div class="project-hero-copy reveal">
                     <h1 class="project-hero-title">Un visualizzatore 3D interattivo per vendere prima ancora di costruire.</h1>
@@ -61,7 +62,7 @@
                     data-src="assets/video/work-1-final.mp4"
                     data-caption="Video finale della presentazione real-time."
                 >
-                    <video autoplay muted loop playsinline preload="metadata" poster="assets/img/work-1.JPG">
+                    <video muted loop playsinline preload="metadata" poster="assets/img/work-1.JPG">
                         <source src="assets/video/work-1-final.mp4" type="video/mp4" />
                     </video>
                 </div>
@@ -82,7 +83,7 @@
                         data-src="assets/video/work-1-gallery-1.mp4"
                         data-caption="Esterno e contesto urbano"
                     >
-                        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <video muted loop playsinline preload="metadata" aria-hidden="true">
                             <source src="assets/video/work-1-gallery-1.mp4" type="video/mp4" />
                         </video>
                     </button>
@@ -102,7 +103,7 @@
                         data-src="assets/video/work-1-gallery-2.mp4"
                         data-caption="Appartamenti su misura"
                     >
-                        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <video muted loop playsinline preload="metadata" aria-hidden="true">
                             <source src="assets/video/work-1-gallery-2.mp4" type="video/mp4" />
                         </video>
                     </button>
@@ -122,7 +123,7 @@
                         data-src="assets/video/work-1-gallery-3.mp4"
                         data-caption="Masterplan interattivo e stato vendite"
                     >
-                        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <video muted loop playsinline preload="metadata" aria-hidden="true">
                             <source src="assets/video/work-1-gallery-3.mp4" type="video/mp4" />
                         </video>
                     </button>
@@ -142,7 +143,7 @@
                         data-src="assets/video/work-3-gallery-3.mp4"
                         data-caption="Finiture"
                     >
-                        <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                        <video muted loop playsinline preload="metadata" aria-hidden="true">
                             <source src="assets/video/work-3-gallery-3.mp4" type="video/mp4" />
                         </video>
                     </button>
@@ -259,7 +260,7 @@
         </section>
     </main>
 
-    <a class="demo-pill" href="mailto:info@cubico-work.com?subject=Demo">Richiedi una demo</a>
+    <a class="demo-pill" href="mailto:info@cubico-work.com?subject=Demo">Richiedi una demo <span class="demo-pill__arrow" aria-hidden="true">&#8594;</span></a>
 
     <div class="lightbox" id="lightbox" aria-hidden="true">
         <button class="lightbox-close" type="button" aria-label="Chiudi il visualizzatore multimediale">Chiudi</button>
@@ -270,6 +271,7 @@
         </div>
     </div>
 
+    <script src="motion.js" defer></script>
     <script src="script.js" defer></script>
 </body>
 </html>

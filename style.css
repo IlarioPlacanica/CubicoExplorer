@@ -117,6 +117,12 @@ button {
     font-weight: 700;
     line-height: 1.2;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    gap: 0.6rem;
+    transition: background-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.demo-pill__arrow {
+    transition: transform 0.3s var(--ease);
 }
 
 .demo-pill:hover {
@@ -496,6 +502,47 @@ main {
     min-height: 100svh;
     background-position: center;
     background-size: cover;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    inset: -7% 0;
+    transform: translate3d(0, var(--hero-drift, 0px), 0);
+    pointer-events: none;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.motion-enabled .hero-background img {
+    animation: hero-settle 1.5s var(--ease) both;
+}
+
+.motion-enabled .project-work-1 .project-hero-copy {
+    transform: translate3d(0, var(--hero-copy-drift, 0px), 0);
+    opacity: var(--hero-copy-opacity, 1);
+}
+
+.motion-enabled .project-work-1 .project-hero-title {
+    animation: hero-enter 1.1s var(--ease) both;
+}
+
+.motion-enabled .project-work-1 .project-hero-text {
+    animation: hero-enter 1.1s var(--ease) 180ms both;
+}
+
+@keyframes hero-settle {
+    from { transform: scale(1.055); }
+    to { transform: scale(1); }
+}
+
+@keyframes hero-enter {
+    from { opacity: 0; transform: translate3d(0, 32px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 .project-hero--video {
@@ -644,6 +691,7 @@ main {
     transition: transform 0.85s var(--ease);
 }
 
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
 .project-feature-video:hover video,
 .project-gallery-card:hover img,
 .project-gallery-card:hover video,
@@ -651,7 +699,16 @@ main {
 .project-media-card:hover video,
 .project-media-card:hover .project-tour-preview iframe,
 .about-image-wrap:hover .about-image {
-    transform: scale(1.03);
+    transform: scale(1.02);
+}
+
+.demo-pill:hover {
+    transform: translateY(-2px);
+}
+
+.demo-pill:hover .demo-pill__arrow {
+    transform: translateX(3px);
+}
 }
 
 .project-work-2-showcase,
@@ -1046,8 +1103,27 @@ main {
 }
 
 .project-workflow article {
+    position: relative;
     padding: 1.3rem 0 0;
     border-top: 1px solid currentColor;
+}
+
+.motion-enabled .project-workflow-grid article::before {
+    content: '';
+    position: absolute;
+    inset: -1px 0 auto;
+    height: 1px;
+    background: var(--sand);
+    transform: scaleX(var(--step-progress, 0));
+    transform-origin: left;
+}
+
+.project-workflow-grid article > span {
+    transition: color 0.35s var(--ease);
+}
+
+.motion-enabled .project-workflow-grid article.is-current > span {
+    color: var(--sand);
 }
 
 .project-workflow article span {
@@ -1242,12 +1318,17 @@ main {
 }
 
 .reveal {
-    opacity: 0;
-    transform: translateY(2.5rem);
-    transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+    opacity: 1;
 }
 
-.reveal.is-visible {
+.reveal-enabled .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-enabled .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -1386,9 +1467,22 @@ main {
         scroll-behavior: auto !important;
     }
 
-    .reveal {
+    .reveal-enabled .reveal {
         opacity: 1;
         transform: none;
+        transition-delay: 0s;
+    }
+
+    .hero-background,
+    .motion-enabled .project-work-1 .project-hero-copy {
+        transform: none;
+        opacity: 1;
+    }
+
+    .motion-enabled .hero-background img,
+    .motion-enabled .project-work-1 .project-hero-title,
+    .motion-enabled .project-work-1 .project-hero-text {
+        animation: none;
     }
 }
 

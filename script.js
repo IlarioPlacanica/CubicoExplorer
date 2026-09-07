@@ -25,7 +25,14 @@
         lightboxTriggers: Array.from(document.querySelectorAll('.js-open-lightbox'))
     };
 
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let prefersReducedMotion = motionPreference.matches;
+    motionPreference.addEventListener('change', (event) => {
+        prefersReducedMotion = event.matches;
+        if (prefersReducedMotion) {
+            ui.lightboxStage?.querySelector('video')?.pause();
+        }
+    });
 
     const previewState = {
         type: '',
